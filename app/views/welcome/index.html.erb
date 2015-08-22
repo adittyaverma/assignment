@@ -1,0 +1,18 @@
+<div class="col-md-12">
+<% @user.each do |a| %>
+  <h2>Welcome <%= a.name %> &nbsp;&nbsp;&nbsp;<a style="font-size:16px;color:red;" href="/users/sign_out">Logout</a></h2> 
+  <h4><b>Profile Picture</b></h4>
+  <%= image_tag a.avatar.url(:thumb), style: "width:150px;height:100px;" %>
+  <h4><b>Name :</b> <%= a.name %></h4>
+  <h4><b>Email :</b> <%= a.email %></h4>
+  <h4><b>Date of Birth :</b> <%= a.dob.strftime("%d/%m/%Y") %></h4>
+  <h4><b>Father's Name :</b> <%= a.fname %></h4>
+  <h4><b>Address :</b> <%= a.address %></h4>
+ <% end %>
+  <style>
+  h4 {
+  	font-family: sans-serif;
+  font-weight: normal;
+  }
+  </style>
+</div>
